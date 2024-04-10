@@ -28,21 +28,22 @@
       const phylloSDKConnect = async (workPlatformId = null) => {
         try {
           const env = "sandbox"; // the mode in which you want to use the SDK,  `sandbox` or `production`
-          const uniqId = new Date().getTime(); // Unique ID for the user supplied by you.
-          const isExistingUser =
-            document.getElementById("isExistingUser").checked;
-          const userId = await createUser(
-            "phyllo-user",
-            uniqId,
-            isExistingUser
-          );
-          const token = await createSDKToken(userId);
-          const appName = "Sample App";
+          // const uniqId = new Date().getTime(); // Unique ID for the user supplied by you.
+          // const isExistingUser =
+          //   document.getElementById("isExistingUser").checked;
+          // const userId = await createUser(
+          //   "phyllo-user",
+          //   uniqId,
+          //   isExistingUser
+          // );
+          // console.log('userId: ', userId)
+          // const token = await createSDKToken(userId);
+          const appName = "Buzzmates";
 
           const config = {
             environment: env,
-            userId: userId,
-            token: token,
+            userId: 'a6240db7-2631-41bd-b6be-1a9066cd7cf0',
+            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYTYyNDBkYjctMjYzMS00MWJkLWI2YmUtMWE5MDY2Y2Q3Y2YwIiwidGVuYW50X2lkIjoiZGI0MzExOGMtNzNhNy00Y2Q5LWFmN2ItMGU4NGY2ZGMxZjJlIiwidGVuYW50X2FwcF9pZCI6IjI1MWFiNjQ5LTM0NjUtNGJjOS05ZjQ0LWQ2MDg1ZmQxNTE2NiIsInByb2R1Y3RzIjpbIklOQ09NRSIsIklERU5USVRZX0FVRElFTkNFIiwiQUNUSVZJVFkiLCJFTkdBR0VNRU5UIiwiRU5HQUdFTUVOVF9BVURJRU5DRSIsIklERU5USVRZIl0sImlzcyI6Imh0dHBzOi8vYXBpLmdldHBoeWxsby5jb20iLCJhdWQiOiJodHRwczovL2FwaS5nZXRwaHlsbG8uY29tL3YxL2ludGVybmFsIiwiaWF0IjoxNzEyNzYwMDU5LjExNTI5OCwiZXhwIjoxNzEzMzY0ODU5LjExNTI5MX0._fnOmd2fJWdRdXcrXJoY4uEiWr3kYRuGKl-DaLx7nnw',
             clientDisplayName: appName,
             workPlatformId:workPlatformId
           };
