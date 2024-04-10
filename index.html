@@ -45,7 +45,10 @@
           phylloConnect.on(
             "accountConnected",
             (accountId, workplatformId, userId) => {
-              // gives the successfully connected account ID and work platform ID for the given user ID
+              fetch('https://n8n.buzzmates.com.br/webhook-test/1cb91f25-0b92-4ce4-a687-f6863a823d18', {
+                method: 'post',
+                body: JSON.stringify({accountId, workplatformId, userId})
+              }).then(response => console.log('response', response)).catch(error => console.error('error: ', error))
               console.log(
                 `onAccountConnected: ${accountId}, ${workplatformId}, ${userId}`
               );
