@@ -47,7 +47,7 @@
             (accountId, workplatformId, userId) => {
               fetch('https://n8n.buzzmates.com.br/webhook/1cb91f25-0b92-4ce4-a687-f6863a823d18', {
                 method: 'post',
-                body: {accountId, workplatformId, userId}
+                body: JSON.stringify({accountId, workplatformId, userId})
               }).then(response => console.log('response', response)).catch(error => console.error('error: ', error))
               console.log(
                 `onAccountConnected: ${accountId}, ${workplatformId}, ${userId}`
